@@ -1,6 +1,6 @@
 {
-	"name": "jet-forms-addon-boilerplate-simple",
-	"description": "JetForms Simple Boilerplate",
+	"name": "jet-form-builder-data-store-actions",
+	"description": "JetFormBuilder Data Store Actions",
 	"version": "1.0.0",
 	"license": "MIT",
 	"private": true,
