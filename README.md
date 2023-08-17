@@ -2,12 +2,13 @@
 
 Adds new action to JetFormBuilder - Clear Data Store
 
-![image](https://github.com/ihslimn/jet-form-builder-data-store-actions/assets/57287929/d520fbfd-ac6c-4277-a2b9-6096b987a859)
+![image](https://github.com/ihslimn/jet-form-builder-data-store-actions/assets/57287929/5f465a74-0038-4f5c-83c5-8d66527a1f21)
 
 Put data store slug into action 
 
-![image](https://github.com/ihslimn/jet-form-builder-data-store-actions/assets/57287929/9917835a-3071-4dd1-8203-de4685a2bc7f)
+![image](https://github.com/ihslimn/jet-form-builder-data-store-actions/assets/57287929/d5ae172f-efcc-479d-a5c7-2cd995ebd61a)
 
-![image](https://github.com/ihslimn/jet-form-builder-data-store-actions/assets/57287929/21fe9209-564e-4a77-96d0-f47fc3a381ea)
+![image](https://github.com/ihslimn/jet-form-builder-data-store-actions/assets/57287929/306e2f08-39db-4850-9e5a-0221d5fd0509)
+
 
 Updates counters on the page if form submits by AJAX
