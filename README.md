@@ -1,6 +1,6 @@
 # JetFormBuilder - Data Store Actions
 
-Adds new action to JetFormBuilder - Clear Data Store.
+## Clear Data Store Action
 
 ![image](https://github.com/ihslimn/jet-form-builder-data-store-actions/assets/57287929/5f465a74-0038-4f5c-83c5-8d66527a1f21)
 
@@ -9,7 +9,7 @@ Works for all types of stores.
 
 Updates counters on the page if form submits by AJAX
 
-# Usage
+### Usage
 
 Put data store slug into action 
 
