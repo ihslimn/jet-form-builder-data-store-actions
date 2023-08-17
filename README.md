@@ -1,4 +1,4 @@
-# jet-form-builder-data-store-actions
+# JetFormBuilder - Data Store Actions
 
 Adds new action to JetFormBuilder - Clear Data Store
 
