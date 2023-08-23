@@ -41,37 +41,31 @@
 
 		response.updated_listings.forEach( function( listing_id ) {
 
-			const $this = $( '#' + listing_id ),
-			      nav   = $this.find('.jet-listing-grid__items').data( 'nav' );
-
-			console.log( $this, nav );
+			var $container     = $( '#' + listing_id ),
+				$elemContainer = $container.find( '> .elementor-widget-container' ),
+				$items         = $container.find( '.jet-listing-grid__items' ),
+				nav            = $items?.data( 'nav' );
 
 			if ( ! nav ) {
 				return;
 			}
 
-			const query = nav.query;
-	
-			let args = {
-				handler:'get_listing',
-				container:$this.find('.elementor-widget-container'),
-				masonry:false,
-				slider:false,
-				append:false,
+			const query = nav.query || {};
+
+			query.is_front_store = true;
+
+			JetEngine.ajaxGetListing( {
+				handler: 'get_listing',
+				container: $elemContainer.length ? $elemContainer : $container,
+				masonry: false,
+				slider: false,
+				append: false,
 				query: query,
 				widgetSettings: nav.widget_settings,
-			};
-
-			window.JetEngine.ajaxGetListing( args, function( response ) {
-				let $container = $this.children('.elementor-widget-container' ),
-				    $result = '';
-				$result = $( response.data.html );
-				if ( ! $result ) {
-					return;
-				}
-				$container.html( $result );
-				window.JetEngine.widgetListingGrid( $this );
-				window.JetEngine.initElementsHandlers( $container );
+				postID: window.elementorFrontendConfig.post.id,
+				elementID: $container.data( 'id' ),
+			}, function( response ) {
+				JetEngine.widgetListingGrid( $container );
 			} );
 
 		} );
