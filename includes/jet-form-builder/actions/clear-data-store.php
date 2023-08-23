@@ -52,7 +52,8 @@ class Clear_Data_Store extends ActionBase {
 	 */
 	public function editor_labels() {
 		return array(
-			'store_slug' => 'Data Store slug',
+			'store_slug'       => 'Data Store slug',
+			'updated_listings' => 'Listings to update',
 		);
 	}
 
@@ -60,7 +61,10 @@ class Clear_Data_Store extends ActionBase {
 	 * @return string[]
 	 */
 	public function visible_attributes_for_gateway_editor() {
-		return array( 'store_slug' );
+		return array( 
+			'store_slug',
+			'updated_listings',
+		);
 	}
 
 	/**
@@ -104,6 +108,22 @@ class Clear_Data_Store extends ActionBase {
 			}
 
 		}
+
+		if ( empty( $this->settings['updated_listings'] ) || ! jet_fb_handler()->is_ajax() ) {
+			return;
+		}
+
+		$this->add_listings_to_response( $this->settings['updated_listings'] );
+
+	}
+
+	public function add_listings_to_response( $updated_listings ) {
+
+		$listing_array = wp_parse_list( $updated_listings );
+
+		$response_listings = jet_fb_handler()->response_data['updated_listings'] ?? array();
+
+		jet_fb_handler()->response_data['updated_listings'] = array_merge( $response_listings, $listing_array );
 
 	}
 

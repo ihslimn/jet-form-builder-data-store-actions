@@ -18,5 +18,10 @@ addAction( 'clear_data_store', function ClearDataStoreAction( {
 			value={ settings.store_slug }
 			onChange={ newVal => onChangeSetting( newVal, 'store_slug' ) }
 		/>
+		<TextControl
+			label={ label( 'updated_listings' ) }
+			value={ settings.updated_listings }
+			onChange={ newVal => onChangeSetting( newVal, 'updated_listings' ) }
+		/>
 	</>;
 } );
