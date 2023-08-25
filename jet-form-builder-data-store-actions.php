@@ -19,6 +19,18 @@ if ( ! defined( 'WPINC' ) ) {
 
 add_action( 'plugins_loaded', function () {
 
+	if ( ! function_exists( 'jet_form_builder' ) || ! function_exists( 'jet_engine' ) ) {
+
+		add_action( 'admin_notices', function() {
+			$class = 'notice notice-error';
+			$message = '<b>WARNING!</b> <b>JetFormBuilder - Data Store Actions</b> plugin requires both <b>JetFormBuilder</b> and <b>JetEngine</b> plugins to be installed and activated.';
+			printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), wp_kses_post( $message ) );
+		} );
+
+		return;
+
+	}
+
 	define( 'JFB_CLEAR_DATA_STORE_VERSION', '1.0.0' );
 
 	define( 'JFB_CLEAR_DATA_STORE__FILE__', __FILE__ );
